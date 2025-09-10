@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { Contador } from './contador/contador';
+import { Boton } from './components/boton/boton';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Contador,
+    Boton
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

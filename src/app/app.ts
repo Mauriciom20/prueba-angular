@@ -7,5 +7,14 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('fundamentos');
+  textoInput = '';
+
+  mostrarTexto() {
+    console.log(this.textoInput);
+  }
+
+  cambiarTexto() {
+    this.textoInput = 'Texto cambiado';
+  }
+  
 }

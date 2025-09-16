@@ -8,13 +8,17 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   textoInput = '';
+  mensajePadre = 'Soy el padre y mando este mensaje 👨‍👦';
 
   mostrarTexto() {
-    console.log(this.textoInput);
+    alert(this.textoInput);
   }
 
   cambiarTexto() {
-    this.textoInput = 'Texto cambiado';
+    this.textoInput = 'Texto cambiado desde el padre!';
   }
-  
+
+  recibirNotificacion(mensaje: string) {
+    alert('Mensaje recibido del hijo: ' + mensaje);
+  }
 }

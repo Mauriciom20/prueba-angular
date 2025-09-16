@@ -5,3 +5,5 @@
 <app-boton texto="Mostrar texto" (actionClick)="mostrarTexto()"></app-boton>
 <app-boton texto="Cambiar texto" (actionClick)="cambiarTexto()"></app-boton>
 <br>
+
+<app-hijo [mensaje]="mensajePadre" (notificar)="recibirNotificacion($event)"></app-hijo>

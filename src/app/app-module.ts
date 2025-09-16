@@ -6,12 +6,14 @@ import { App } from './app';
 import { Contador } from './contador/contador';
 import { Boton } from './components/boton/boton';
 import { FormsModule } from '@angular/forms';
+import { HijoComponent } from './hijo/hijo.component';
 
 @NgModule({
   declarations: [
     App,
     Contador,
-    Boton
+    Boton,
+    HijoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,5 @@
+<span>{{ nombreTarea }}</span>
+<!--El disabled evita marcar si no hay tarea.-->
+<button (click)="marcarComoCompletada()" [disabled]="!nombreTarea || nombreTarea.trim() === ''">
+  Marcar como completada
+</button>

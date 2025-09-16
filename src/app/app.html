@@ -5,5 +5,22 @@
 <app-boton texto="Mostrar texto" (actionClick)="mostrarTexto()"></app-boton>
 <app-boton texto="Cambiar texto" (actionClick)="cambiarTexto()"></app-boton>
 <br>
-
 <app-hijo [mensaje]="mensajePadre" (notificar)="recibirNotificacion($event)"></app-hijo>
+<br>
+<!-- Input para escribir la tarea -->
+<input type="text" [(ngModel)]="tareaTyping" placeholder="Escribe la tarea...">
+
+<!-- Botón que envía la tarea al hijo -->
+<button (click)="enviarTarea()" [disabled]="!tareaTyping || tareaTyping.trim() === ''">
+  Enviar tarea al hijo
+</button>
+
+<!-- Mensaje que muestra pendiente o completada -->
+<h2 *ngIf="tareaEnviada && !tareaCompletada">Tarea pendiente: {{ tareaEnviada }}</h2>
+<h2 *ngIf="tareaEnviada && tareaCompletada">Tarea completada: {{ tareaEnviada }}</h2>
+
+<!-- Componente hijo -->
+<app-tarea
+  [nombreTarea]="tareaEnviada"
+  (completar)="completarTarea()">
+</app-tarea>
